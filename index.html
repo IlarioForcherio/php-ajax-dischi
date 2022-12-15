@@ -21,14 +21,20 @@
     <main>
         <div id="app">
 
+           
             <ul>
                 <li v-for="(element, index) in arrayDischi" :key="index">{{element.title}}</li>
             </ul>
 
+
+            <select name="" id="" v-model="selectGenere" @change="ricercaGeneri" >
+                <option v-for="(elem,index) in arrayGeneri" :key="index"  :value="elem">{{elem}}</option>
+                </select> 
+
             <div class="row w-75 m-auto">
                 <div class="col-4" v-for="(element, index) in arrayDischi" :key="index">
                     <div class="card text-center mt-5" style="width: 18rem;">
-                        <img :src="element.poster" class="card-img-top" alt="...">
+                        <img :src="element.poster" class="card-img-top" alt="element.title">
                         <div class="card-body">
                             <h5 class="card-title">{{element.title}}</h5>
                             <p class="card-text">{{element.author}}</p>
